@@ -1,0 +1,2448 @@
+<html>
+<head>
+<title>Coverage Report</title>
+<link title="Style" type="text/css" rel="stylesheet" href="css/main.css" />
+<script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body>
+<h5>Coverage Report - org.apache.commons.math.fraction.Fraction</h5>
+<p>
+<table class="report">
+<thead><tr>  <td class="heading">Classes in this File</td>  <td class="heading" width="20%"><a class="dfn" href="help.html" onClick="popupwindow('help.html'); return false;">Line Coverage</a></td>  <td class="heading" width="20%"><a class="dfn" href="help.html" onClick="popupwindow('help.html'); return false;">Branch Coverage</a></td>  <td class="heading" width="10%"><a class="dfn" href="help.html" onClick="popupwindow('help.html'); return false;">Complexity</a></td></tr></thead>
+  <tr><td class="text"><a href="org.apache.commons.math.fraction.Fraction.html">Fraction</a></td><td class="value"><table cellpadding="0" cellspacing="0" align="right"><tr><td>96%&nbsp;</td><td><table class="percentGraph" cellpadding="0" cellspacing="0" width="100"><tr><td class="covered" width="95"></td><td class="uncovered" width="4"></td></tr></table></td></tr></table></td><td class="value"><table cellpadding="0" cellspacing="0" align="right"><tr><td>97%&nbsp;</td><td><table class="percentGraph" cellpadding="0" cellspacing="0" width="100"><tr><td class="covered" width="97"></td><td class="uncovered" width="2"></td></tr></table></td></tr></table></td><td class="value"><span class="hidden">3.1818181818181817;</span>3.182</td></tr>
+</table>
+</p>
+<p>
+<table cellspacing="0" cellpadding="0" class="src">
+<tr>
+  <td class="numLine">&nbsp;1</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">/*</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;2</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * Licensed to the Apache Software Foundation (ASF) under one or more</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;3</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * contributor license agreements.  See the NOTICE file distributed with</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;4</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * this work for additional information regarding copyright ownership.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;5</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * The ASF licenses this file to You under the Apache License, Version 2.0</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;6</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * (the "License"); you may not use this file except in compliance with</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;7</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * the License.  You may obtain a copy of the License at</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;8</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> *</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;9</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;10</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> *</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;11</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;12</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * distributed under the License is distributed on an "AS IS" BASIS,</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;13</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;14</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * See the License for the specific language governing permissions and</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;15</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * limitations under the License.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;16</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;17</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">package</span> org.apache.commons.math.fraction;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;18</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;19</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> java.math.BigInteger;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;20</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> org.apache.commons.math.util.MathUtils;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;21</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;22</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;23</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * Representation of a rational number.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;24</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> *</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;25</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * @since 1.1</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;26</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> * @version $Revision: 506591 $ $Date: 2007-02-12 11:23:17 -0800 (Mon, 12 Feb 2007) $</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;27</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment"> */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;28</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> Fraction <span class="keyword">extends</span> Number <span class="keyword">implements</span> Comparable {</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;29</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;30</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/** A fraction representing "1 / 1". */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;31</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Fraction ONE = <span class="keyword">new</span> Fraction(1, 1);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;32</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;33</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/** A fraction representing "0 / 1". */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;34</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Fraction ZERO = <span class="keyword">new</span> Fraction(0, 1);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;35</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;36</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/** Serializable version identifier */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;37</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = 6222990762865980424L;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;38</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;39</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;40</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/** The denominator. */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;41</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">int</span> denominator;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;42</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;43</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/** The numerator. */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;44</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">int</span> numerator;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;45</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;46</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;47</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Create a fraction given the double value.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;48</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param value the double value to convert to a fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;49</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws FractionConversionException if the continued fraction failed to</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;50</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *         converge.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;51</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;52</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction(<span class="keyword">double</span> value) <span class="keyword">throws</span> FractionConversionException {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;53</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">this</span>(value, 1.0e-5, 100);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;54</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;55</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;56</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;57</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Create a fraction given the double value.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;58</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;p&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;59</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * References:</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;60</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;ul&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;61</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;li&gt;&lt;a href="http://mathworld.wolfram.com/ContinuedFraction.html"&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;62</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Continued Fraction&lt;/a&gt; equations (11) and (22)-(26)&lt;/li&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;63</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;/ul&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;64</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;/p&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;65</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param value the double value to convert to a fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;66</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param epsilon maximum error allowed.  The resulting fraction is within</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;67</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *        &lt;code&gt;epsilon&lt;/code&gt; of &lt;code&gt;value&lt;/code&gt;, in absolute terms.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;68</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param maxIterations maximum number of convergents</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;69</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws FractionConversionException if the continued fraction failed to</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;70</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *         converge.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;71</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;72</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction(<span class="keyword">double</span> value, <span class="keyword">double</span> epsilon, <span class="keyword">int</span> maxIterations)</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;73</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">throws</span> FractionConversionException</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;74</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;    {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;75</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">double</span> r0 = value;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;76</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> a0 = (<span class="keyword">int</span>)Math.floor(r0);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;77</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;78</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// check for (almost) integer arguments, which should not go</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;79</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// to iterations.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;80</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (Math.abs(a0 - value) &lt; epsilon) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;81</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">this</span>.numerator = a0;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;82</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">this</span>.denominator = 1;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;83</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span>;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;84</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;85</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;86</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> p0 = 1;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;87</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> q0 = 0;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;88</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> p1 = a0;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;89</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> q1 = 1;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;90</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;91</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> p2 = 0;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;92</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> q2 = 1;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;93</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;94</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> n = 0;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;95</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">boolean</span> stop = <span class="keyword">false</span>;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;96</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">do</span> {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;97</td>
+  <td class="nbHitsCovered">&nbsp;27</td>
+  <td class="src"><pre class="src">&nbsp;            ++n;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;98</td>
+  <td class="nbHitsCovered">&nbsp;27</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">double</span> r1 = 1.0 / (r0 - a0);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;99</td>
+  <td class="nbHitsCovered">&nbsp;27</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">int</span> a1 = (<span class="keyword">int</span>)Math.floor(r1);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;100</td>
+  <td class="nbHitsCovered">&nbsp;27</td>
+  <td class="src"><pre class="src">&nbsp;            p2 = (a1 * p1) + p0;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;101</td>
+  <td class="nbHitsCovered">&nbsp;27</td>
+  <td class="src"><pre class="src">&nbsp;            q2 = (a1 * q1) + q0;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;102</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;103</td>
+  <td class="nbHitsCovered">&nbsp;27</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">double</span> convergent = (<span class="keyword">double</span>)p2 / (<span class="keyword">double</span>)q2;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;104</td>
+  <td class="nbHitsCovered">&nbsp;27</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">if</span> (n &lt; maxIterations &amp;&amp; Math.abs(convergent - value) &gt; epsilon) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;105</td>
+  <td class="nbHitsCovered">&nbsp;18</td>
+  <td class="src"><pre class="src">&nbsp;                p0 = p1;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;106</td>
+  <td class="nbHitsCovered">&nbsp;18</td>
+  <td class="src"><pre class="src">&nbsp;                p1 = p2;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;107</td>
+  <td class="nbHitsCovered">&nbsp;18</td>
+  <td class="src"><pre class="src">&nbsp;                q0 = q1;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;108</td>
+  <td class="nbHitsCovered">&nbsp;18</td>
+  <td class="src"><pre class="src">&nbsp;                q1 = q2;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;109</td>
+  <td class="nbHitsCovered">&nbsp;18</td>
+  <td class="src"><pre class="src">&nbsp;                a0 = a1;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;110</td>
+  <td class="nbHitsCovered">&nbsp;18</td>
+  <td class="src"><pre class="src">&nbsp;                r0 = r1;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;111</td>
+  <td class="nbHitsCovered">&nbsp;18</td>
+  <td class="src"><pre class="src">&nbsp;            } <span class="keyword">else</span> {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;112</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;                stop = <span class="keyword">true</span>;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;113</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;114</td>
+  <td class="nbHitsCovered">&nbsp;27</td>
+  <td class="src"><pre class="src">&nbsp;        } <span class="keyword">while</span> (!stop);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;115</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;116</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (n &gt;= maxIterations) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;117</td>
+  <td class="nbHitsUncovered">&nbsp;0</td>
+  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> FractionConversionException(value, maxIterations);</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;118</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;119</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;120</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">this</span>.numerator = p2;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;121</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">this</span>.denominator = q2;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;122</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        reduce();</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;123</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;124</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;125</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;126</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Create a fraction given the numerator and denominator.  The fraction is</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;127</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * reduced to lowest terms.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;128</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param num the numerator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;129</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param den the denominator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;130</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws ArithmeticException if the denomiator is &lt;code&gt;zero&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;131</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;132</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction(<span class="keyword">int</span> num, <span class="keyword">int</span> den) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;133</td>
+  <td class="nbHitsCovered">&nbsp;159</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">super</span>();</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;134</td>
+  <td class="nbHitsCovered">&nbsp;159</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (den == 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;135</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException(<span class="string">"The denominator must not be zero"</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;136</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;137</td>
+  <td class="nbHitsCovered">&nbsp;158</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (den &lt; 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;138</td>
+  <td class="nbHitsCovered">&nbsp;12</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">if</span> (num == Integer.MIN_VALUE ||</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;139</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                    den == Integer.MIN_VALUE) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;140</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;                <span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException(<span class="string">"overflow: can't negate"</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;141</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;142</td>
+  <td class="nbHitsCovered">&nbsp;10</td>
+  <td class="src"><pre class="src">&nbsp;            num = -num;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;143</td>
+  <td class="nbHitsCovered">&nbsp;10</td>
+  <td class="src"><pre class="src">&nbsp;            den = -den;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;144</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;145</td>
+  <td class="nbHitsCovered">&nbsp;156</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">this</span>.numerator = num;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;146</td>
+  <td class="nbHitsCovered">&nbsp;156</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">this</span>.denominator = den;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;147</td>
+  <td class="nbHitsCovered">&nbsp;156</td>
+  <td class="src"><pre class="src">&nbsp;        reduce();</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;148</td>
+  <td class="nbHitsCovered">&nbsp;156</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;149</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;150</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;151</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Returns the absolute value of this fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;152</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return the absolute value.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;153</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;154</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction abs() {</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;155</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        Fraction ret;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;156</td>
+  <td class="nbHitsCovered">&nbsp;3</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (numerator &gt;= 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;157</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            ret = <span class="keyword">this</span>;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;158</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;        } <span class="keyword">else</span> {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;159</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            ret = negate();</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;160</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;161</td>
+  <td class="nbHitsCovered">&nbsp;3</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> ret;        </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;162</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;163</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;164</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;165</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Compares this object to another based on size.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;166</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param object the object to compare to</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;167</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return -1 if this is less than &lt;tt&gt;object&lt;/tt&gt;, +1 if this is greater</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;168</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *         than &lt;tt&gt;object&lt;/tt&gt;, 0 if they are equal.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;169</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;170</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">int</span> compareTo(Object object) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;171</td>
+  <td class="nbHitsCovered">&nbsp;4</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> ret = 0;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;172</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;173</td>
+  <td class="nbHitsCovered">&nbsp;4</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (<span class="keyword">this</span> != object) { </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;174</td>
+  <td class="nbHitsCovered">&nbsp;3</td>
+  <td class="src"><pre class="src">&nbsp;            Fraction other = (Fraction)object;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;175</td>
+  <td class="nbHitsCovered">&nbsp;3</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">double</span> first = doubleValue();</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;176</td>
+  <td class="nbHitsCovered">&nbsp;3</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">double</span> second = other.doubleValue();</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;177</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;178</td>
+  <td class="nbHitsCovered">&nbsp;3</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">if</span> (first &lt; second) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;179</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;                ret = -1;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;180</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            } <span class="keyword">else</span> <span class="keyword">if</span> (first &gt; second) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;181</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;                ret = 1;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;182</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;183</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;184</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;185</td>
+  <td class="nbHitsCovered">&nbsp;4</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> ret;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;186</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;187</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;188</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;189</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Gets the fraction as a &lt;tt&gt;double&lt;/tt&gt;. This calculates the fraction as</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;190</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * the numerator divided by denominator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;191</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return the fraction as a &lt;tt&gt;double&lt;/tt&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;192</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;193</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">double</span> doubleValue() {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;194</td>
+  <td class="nbHitsCovered">&nbsp;14</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> (<span class="keyword">double</span>)numerator / (<span class="keyword">double</span>)denominator;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;195</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;196</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;197</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;198</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Test for the equality of two fractions.  If the lowest term</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;199</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * numerator and denominators are the same for both fractions, the two</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;200</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * fractions are considered to be equal.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;201</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param other fraction to test for equality to this fraction</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;202</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return true if two fractions are equal, false if object is</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;203</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *         &lt;tt&gt;null&lt;/tt&gt;, not an instance of {@link Fraction}, or not equal</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;204</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *         to this fraction instance.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;205</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;206</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">boolean</span> equals(Object other) {</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;207</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">boolean</span> ret;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;208</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;209</td>
+  <td class="nbHitsCovered">&nbsp;8</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (<span class="keyword">this</span> == other) { </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;210</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            ret = <span class="keyword">true</span>;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;211</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;        } <span class="keyword">else</span> <span class="keyword">if</span> (other == <span class="keyword">null</span>) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;212</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            ret = <span class="keyword">false</span>;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;213</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;        } <span class="keyword">else</span> {</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;214</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">try</span> {</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;215</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                <span class="comment">// since fractions are always in lowest terms, numerators and</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;216</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                <span class="comment">// denominators can be compared directly for equality.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;217</td>
+  <td class="nbHitsCovered">&nbsp;5</td>
+  <td class="src"><pre class="src">&nbsp;                Fraction rhs = (Fraction)other;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;218</td>
+  <td class="nbHitsCovered">&nbsp;4</td>
+  <td class="src"><pre class="src">&nbsp;                ret = (numerator == rhs.numerator) &amp;&amp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;219</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                    (denominator == rhs.denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;220</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            } <span class="keyword">catch</span> (ClassCastException ex) {</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;221</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                <span class="comment">// ignore exception</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;222</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;                ret = <span class="keyword">false</span>;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;223</td>
+  <td class="nbHitsCovered">&nbsp;4</td>
+  <td class="src"><pre class="src">&nbsp;            }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;224</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;225</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;226</td>
+  <td class="nbHitsCovered">&nbsp;8</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> ret;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;227</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;228</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;229</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;230</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Gets the fraction as a &lt;tt&gt;float&lt;/tt&gt;. This calculates the fraction as</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;231</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * the numerator divided by denominator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;232</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return the fraction as a &lt;tt&gt;float&lt;/tt&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;233</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;234</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">float</span> floatValue() {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;235</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> (<span class="keyword">float</span>)doubleValue();</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;236</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;237</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;238</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;239</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Access the denominator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;240</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return the denominator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;241</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;242</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">int</span> getDenominator() {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;243</td>
+  <td class="nbHitsCovered">&nbsp;80</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> denominator;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;244</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;245</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;246</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;247</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Access the numerator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;248</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return the numerator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;249</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;250</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">int</span> getNumerator() {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;251</td>
+  <td class="nbHitsCovered">&nbsp;82</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> numerator;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;252</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;253</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;254</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;255</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Gets a hashCode for the fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;256</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return a hash code value for this object</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;257</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;258</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">int</span> hashCode() {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;259</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> 37 * (37 * 17 + getNumerator()) + getDenominator();</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;260</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;261</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;262</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;263</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Gets the fraction as an &lt;tt&gt;int&lt;/tt&gt;. This returns the whole number part</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;264</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * of the fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;265</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return the whole number fraction part</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;266</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;267</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">int</span> intValue() {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;268</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> (<span class="keyword">int</span>)doubleValue();</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;269</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;270</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;271</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;272</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Gets the fraction as a &lt;tt&gt;long&lt;/tt&gt;. This returns the whole number part</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;273</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * of the fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;274</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return the whole number fraction part</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;275</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;276</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">long</span> longValue() {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;277</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> (<span class="keyword">long</span>)doubleValue();</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;278</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;279</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;280</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;281</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Return the additive inverse of this fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;282</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return the negation of this fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;283</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;284</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction negate() {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;285</td>
+  <td class="nbHitsCovered">&nbsp;8</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (numerator==Integer.MIN_VALUE) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;286</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException(<span class="string">"overflow: too large to negate"</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;287</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;288</td>
+  <td class="nbHitsCovered">&nbsp;7</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> <span class="keyword">new</span> Fraction(-numerator, denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;289</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;290</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;291</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;292</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Return the multiplicative inverse of this fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;293</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return the reciprocal fraction</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;294</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;295</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction reciprocal() {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;296</td>
+  <td class="nbHitsCovered">&nbsp;17</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> <span class="keyword">new</span> Fraction(denominator, numerator);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;297</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;298</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;299</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;300</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;p&gt;Adds the value of this fraction to another, returning the result in reduced form.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;301</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * The algorithm follows Knuth, 4.5.1.&lt;/p&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;302</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;303</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param fraction  the fraction to add, must not be &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;304</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;305</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;306</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws ArithmeticException if the resulting numerator or denominator exceeds</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;307</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;308</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;309</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction add(Fraction fraction) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;310</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> addSub(fraction, <span class="keyword">true</span> <span class="comment">/* add */</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;311</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;312</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;313</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;314</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;p&gt;Subtracts the value of another fraction from the value of this one, </span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;315</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * returning the result in reduced form.&lt;/p&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;316</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;317</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param fraction  the fraction to subtract, must not be &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;318</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;319</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;320</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws ArithmeticException if the resulting numerator or denominator</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;321</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *   cannot be represented in an &lt;code&gt;int&lt;/code&gt;.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;322</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;323</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction subtract(Fraction fraction) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;324</td>
+  <td class="nbHitsCovered">&nbsp;13</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> addSub(fraction, <span class="keyword">false</span> <span class="comment">/* subtract */</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;325</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;326</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;327</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/** </span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;328</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Implement add and subtract using algorithm described in Knuth 4.5.1.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;329</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * </span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;330</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param fraction the fraction to subtract, must not be &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;331</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param isAdd true to add, false to subtract</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;332</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;333</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;334</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws ArithmeticException if the resulting numerator or denominator</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;335</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *   cannot be represented in an &lt;code&gt;int&lt;/code&gt;.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;336</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;337</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> Fraction addSub(Fraction fraction, <span class="keyword">boolean</span> isAdd) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;338</td>
+  <td class="nbHitsCovered">&nbsp;28</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (fraction == <span class="keyword">null</span>) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;339</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"The fraction must not be null"</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;340</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;341</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// zero is identity for addition.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;342</td>
+  <td class="nbHitsCovered">&nbsp;26</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (numerator == 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;343</td>
+  <td class="nbHitsUncovered">&nbsp;0</td>
+  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> isAdd ? fraction : fraction.negate();</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;344</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;345</td>
+  <td class="nbHitsCovered">&nbsp;26</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (fraction.numerator == 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;346</td>
+  <td class="nbHitsUncovered">&nbsp;0</td>
+  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">this</span>;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;347</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }     </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;348</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// if denominators are randomly distributed, d1 will be 1 about 61%</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;349</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// of the time.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;350</td>
+  <td class="nbHitsCovered">&nbsp;26</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> d1 = MathUtils.gcd(denominator, fraction.denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;351</td>
+  <td class="nbHitsCovered">&nbsp;26</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (d1==1) {</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;352</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="comment">// result is ( (u*v' +/- u'v) / u'v')</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;353</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">int</span> uvp = MathUtils.mulAndCheck(numerator, fraction.denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;354</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">int</span> upv = MathUtils.mulAndCheck(fraction.numerator, denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;355</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> <span class="keyword">new</span> Fraction</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;356</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                (isAdd ? MathUtils.addAndCheck(uvp, upv) : </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;357</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                 MathUtils.subAndCheck(uvp, upv),</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;358</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                 MathUtils.mulAndCheck(denominator, fraction.denominator));</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;359</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;360</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// the quantity 't' requires 65 bits of precision; see knuth 4.5.1</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;361</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// exercise 7.  we're going to use a BigInteger.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;362</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// t = u(v'/d1) +/- v(u'/d1)</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;363</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        BigInteger uvp = BigInteger.valueOf(numerator)</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;364</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        .multiply(BigInteger.valueOf(fraction.denominator/d1));</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;365</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        BigInteger upv = BigInteger.valueOf(fraction.numerator)</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;366</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        .multiply(BigInteger.valueOf(denominator/d1));</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;367</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        BigInteger t = isAdd ? uvp.add(upv) : uvp.subtract(upv);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;368</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// but d2 doesn't need extra precision because</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;369</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// d2 = gcd(t,d1) = gcd(t mod d1, d1)</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;370</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> tmodd1 = t.mod(BigInteger.valueOf(d1)).intValue();</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;371</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> d2 = (tmodd1==0)?d1:MathUtils.gcd(tmodd1, d1);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;372</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;373</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// result is (t/d2) / (u'/d1)(v'/d2)</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;374</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        BigInteger w = t.divide(BigInteger.valueOf(d2));</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;375</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (w.bitLength() &gt; 31) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;376</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;377</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            (<span class="string">"overflow: numerator too large after multiply"</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;378</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;379</td>
+  <td class="nbHitsCovered">&nbsp;9</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> <span class="keyword">new</span> Fraction (w.intValue(), </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;380</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                MathUtils.mulAndCheck(denominator/d1, </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;381</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                        fraction.denominator/d2));</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;382</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;383</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;384</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;385</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;p&gt;Multiplies the value of this fraction by another, returning the </span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;386</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * result in reduced form.&lt;/p&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;387</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;388</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param fraction  the fraction to multiply by, must not be &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;389</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;390</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;391</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws ArithmeticException if the resulting numerator or denominator exceeds</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;392</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;393</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;394</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction multiply(Fraction fraction) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;395</td>
+  <td class="nbHitsCovered">&nbsp;16</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (fraction == <span class="keyword">null</span>) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;396</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"The fraction must not be null"</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;397</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;398</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (numerator == 0 || fraction.numerator == 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;399</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> ZERO;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;400</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;401</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// knuth 4.5.1</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;402</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// make sure we don't overflow unless the result *must* overflow.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;403</td>
+  <td class="nbHitsCovered">&nbsp;14</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> d1 = MathUtils.gcd(numerator, fraction.denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;404</td>
+  <td class="nbHitsCovered">&nbsp;14</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> d2 = MathUtils.gcd(fraction.numerator, denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;405</td>
+  <td class="nbHitsCovered">&nbsp;14</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> getReducedFraction</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;406</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        (MathUtils.mulAndCheck(numerator/d1, fraction.numerator/d2),</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;407</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                MathUtils.mulAndCheck(denominator/d2, fraction.denominator/d1));</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;408</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;409</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;410</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;411</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;p&gt;Divide the value of this fraction by another.&lt;/p&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;412</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;413</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param fraction  the fraction to divide by, must not be &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;414</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;415</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;416</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws ArithmeticException if the fraction to divide by is zero</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;417</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws ArithmeticException if the resulting numerator or denominator exceeds</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;418</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;419</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;420</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Fraction divide(Fraction fraction) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;421</td>
+  <td class="nbHitsCovered">&nbsp;12</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (fraction == <span class="keyword">null</span>) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;422</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"The fraction must not be null"</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;423</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;424</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (fraction.numerator == 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;425</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException(<span class="string">"The fraction to divide by must not be zero"</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;426</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;427</td>
+  <td class="nbHitsCovered">&nbsp;10</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> multiply(fraction.reciprocal());</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;428</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;429</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;430</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;431</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;p&gt;Creates a &lt;code&gt;Fraction&lt;/code&gt; instance with the 2 parts</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;432</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * of a fraction Y/Z.&lt;/p&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;433</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;434</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * &lt;p&gt;Any negative signs are resolved to be on the numerator.&lt;/p&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;435</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     *</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;436</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param numerator  the numerator, for example the three in 'three sevenths'</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;437</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @param denominator  the denominator, for example the seven in 'three sevenths'</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;438</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @return a new fraction instance, with the numerator and denominator reduced</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;439</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * @throws ArithmeticException if the denominator is &lt;code&gt;zero&lt;/code&gt;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;440</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;441</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> Fraction getReducedFraction(<span class="keyword">int</span> numerator, <span class="keyword">int</span> denominator) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;442</td>
+  <td class="nbHitsCovered">&nbsp;17</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (denominator == 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;443</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException(<span class="string">"The denominator must not be zero"</span>);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;444</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;445</td>
+  <td class="nbHitsCovered">&nbsp;16</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (numerator==0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;446</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> ZERO; <span class="comment">// normalize zero.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;447</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;448</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// allow 2^k/-2^31 as a valid fraction (where k&gt;0)</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;449</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (denominator==Integer.MIN_VALUE &amp;&amp; (numerator&amp;1)==0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;450</td>
+  <td class="nbHitsCovered">&nbsp;1</td>
+  <td class="src"><pre class="src">&nbsp;            numerator/=2; denominator/=2;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;451</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;452</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (denominator &lt; 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;453</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            <span class="keyword">if</span> (numerator==Integer.MIN_VALUE ||</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;454</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                    denominator==Integer.MIN_VALUE) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;455</td>
+  <td class="nbHitsUncovered">&nbsp;0</td>
+  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                <span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException(<span class="string">"overflow: can't negate"</span>);</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;456</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;            }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;457</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            numerator = -numerator;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;458</td>
+  <td class="nbHitsCovered">&nbsp;2</td>
+  <td class="src"><pre class="src">&nbsp;            denominator = -denominator;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;459</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;460</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// simplify fraction.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;461</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> gcd = MathUtils.gcd(numerator, denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;462</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;        numerator /= gcd;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;463</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;        denominator /= gcd;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;464</td>
+  <td class="nbHitsCovered">&nbsp;15</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> <span class="keyword">new</span> Fraction(numerator, denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;465</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;466</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    </pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;467</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;468</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * Reduce this fraction to lowest terms.  This is accomplished by dividing</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;469</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     * both numerator and denominator by their greatest common divisor.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;470</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;471</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">void</span> reduce() {</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;472</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// reduce numerator and denominator by greatest common denominator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;473</td>
+  <td class="nbHitsCovered">&nbsp;165</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">int</span> d = MathUtils.gcd(numerator, denominator);</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;474</td>
+  <td class="nbHitsCovered">&nbsp;165</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (d &gt; 1) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;475</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;            numerator /= d;</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;476</td>
+  <td class="nbHitsCovered">&nbsp;11</td>
+  <td class="src"><pre class="src">&nbsp;            denominator /= d;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;477</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;478</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;479</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="comment">// move sign to numerator.</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;480</td>
+  <td class="nbHitsCovered">&nbsp;165</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">if</span> (denominator &lt; 0) {</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;481</td>
+  <td class="nbHitsUncovered">&nbsp;0</td>
+  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            numerator *= -1;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;482</td>
+  <td class="nbHitsUncovered">&nbsp;0</td>
+  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            denominator *= -1;</span></pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;483</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td>
+</tr>
+<tr>
+  <td class="numLineCover">&nbsp;484</td>
+  <td class="nbHitsCovered">&nbsp;165</td>
+  <td class="src"><pre class="src">&nbsp;    }</pre></td>
+</tr>
+<tr>
+  <td class="numLine">&nbsp;485</td>
+  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;}</pre></td>
+</tr>
+</table>
+</p>
+<div class="footer">
+Reports generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a>.
+</div>
+</body>
+</html>

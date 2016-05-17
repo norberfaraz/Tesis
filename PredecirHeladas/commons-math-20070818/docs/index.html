@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>Commons-Math: The Mathematics Library - Math</title><style type="text/css" media="all">
+          @import url("./style/maven-base.css");
+          
+          @import url("./style/maven-theme.css");@import url("./style/project.css");</style><link rel="stylesheet" href="./style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta></head><body class="composite"><div id="banner"><a href="http://commons.apache.org/" id="organizationLogo"><img alt="The Apache Software Foundation" src="http://commons.apache.org/images/logo.png"></img></a><a href="http://commons.apache.org/math/" id="projectLogo"><img alt="Math" src="./images/math.gif"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">Last published: 18 August 2007
+                <span class="separator">|</span> Doc for  1.2-SNAPSHOT
+                </div><div class="xright">
+        
+        <a href="http://commons.apache.org/" class="externalLink" title="External Link">Apache Commons</a>
+      </div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuMath"><h5>Math</h5><ul><li class="none"><strong><a href="index.html">Overview</a></strong></li><li class="none"><a href="proposal.html">Proposal</a></li><li class="none"><a href="developers.html">Developers Guide</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.0/index.html" class="externalLink" title="External Link">Javadoc (1.0 release)</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.1/index.html" class="externalLink" title="External Link">Javadoc (1.1 release)</a></li><li class="none"><a href="apidocs/index.html">Javadoc (1.2-SNAPSHOT)</a></li><li class="none"><a href="http://svn.apache.org/viewvc/commons/proper/math/trunk" class="externalLink" title="External Link">Source Repository (current)</a></li><li class="none"><a href="http://wiki.apache.org/commons/Math" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="menuUser_Guide"><h5>User Guide</h5><ul><li class="none"><a href="userguide/index.html">Contents</a></li><li class="none"><a href="userguide/overview.html">Overview</a></li><li class="none"><a href="userguide/stat.html">Statistics</a></li><li class="none"><a href="userguide/random.html">Data Generation</a></li><li class="none"><a href="userguide/linear.html">Linear Algebra</a></li><li class="none"><a href="userguide/analysis.html">Numerical Analysis</a></li><li class="none"><a href="userguide/special.html">Special Functions</a></li><li class="none"><a href="userguide/utilities.html">Utilities</a></li><li class="none"><a href="userguide/complex.html">Complex Numbers</a></li><li class="none"><a href="userguide/distribution.html">Distributions</a></li><li class="none"><a href="userguide/fraction.html">Fractions</a></li><li class="none"><a href="userguide/transform.html">Transform Methods</a></li><li class="none"><a href="userguide/geometry.html">3D Geometry</a></li><li class="none"><a href="userguide/estimation.html">Parametric Estimation</a></li><li class="none"><a href="userguide/optimization.html">Optimization</a></li><li class="none"><a href="userguide/ode.html">Ordinary Differential Equations</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><strong><a href="index.html">About</a></strong></li><li class="collapsed"><a href="project-info.html">Project Info</a></li><li class="collapsed"><a href="maven-reports.html">Project Reports</a></li><li class="none"><a href="http://commons.apache.org/charter.html" class="externalLink" title="External Link">Development Process</a></li></ul></div><div id="menuCommons"><h5>Commons</h5><ul><li class="none"><a href="http://jakarta.apache.org/commons/" class="externalLink" title="External Link">Home</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/components.html" class="externalLink" title="External Link">Components</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/sandbox/index.html" class="externalLink" title="External Link">Sandbox</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/dormant/index.html" class="externalLink" title="External Link">Dormant</a></li><li class="none"><a href="http://jakarta.apache.org/commons/volunteering.html" class="externalLink" title="External Link">Volunteering</a></li><li class="none"><a href="http://jakarta.apache.org/commons/patches.html" class="externalLink" title="External Link">Contributing Patches</a></li><li class="none"><a href="http://jakarta.apache.org/commons/building.html" class="externalLink" title="External Link">Building Components</a></li><li class="none"><a href="http://jakarta.apache.org/commons/releases/index.html" class="externalLink" title="External Link">Releasing Components</a></li><li class="none"><a href="http://wiki.apache.org/jakarta-commons/FrontPage" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="legend"><h5>Legend</h5><ul><li class="externalLink">External Link</li><li class="newWindow">Opens in a new window</li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="./images/logos/maven-feather.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="Commons-Math:_The_Mathematics_Library"></a><h2>Commons-Math: The Mathematics Library</h2>
+   <p>
+    Commons Math is a library of lightweight, self-contained
+    mathematics and statistics components addressing the most common
+    problems not available in the Java programming language or Commons
+    Lang.
+   </p>
+   <p>
+    Guiding principles:
+    <ol>
+     <li>
+      Real-world application use cases determine development
+      priority.
+     </li>
+     <li>
+      This package emphasizes small, easily integrated components
+      rather than large libraries with complex dependencies and
+      configurations.
+     </li>
+     <li>
+      All algorithms are fully documented and follow generally
+      accepted best practices.
+     </li>
+     <li>
+      In situations where multiple standard algorithms exist, a
+      Strategy pattern is used to support multiple
+      implementations.
+     </li>
+     <li>
+      Limited dependencies. No external dependencies beyond Commons
+      components and the core Java 2 platform.
+     </li>
+    </ol>
+   </p>
+  </div><div class="section"><a name="Download_Math"></a><h2>Download Math</h2>
+   <div class="subsection"><a name="Releases"></a><h3>Releases</h3>
+    <p>
+      Download the 
+      <a href="http://commons.apache.org/downloads/download_math.cgi" class="externalLink" title="External Link">
+      Latest Release</a> of Commons Math.
+    </p>
+   </div>
+   <div class="subsection"><a name="Nightly_Builds"></a><h3>Nightly Builds</h3>
+    <p>
+     <a href="http://people.apache.org/builds/commons/nightly/commons-math/" class="externalLink" title="External Link">
+     Nightly builds</a> are built once a day from the current SVN HEAD.
+     This is (nearly) the lastest code and so should be treated with
+     caution!
+    </p>
+   </div>
+  </div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2003-2007, The Apache Software Foundation</div><div class="clear"><hr></hr></div></div></body></html>

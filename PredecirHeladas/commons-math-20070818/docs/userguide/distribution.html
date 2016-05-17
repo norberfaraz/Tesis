@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>The Commons Math User Guide - Statistics - Math</title><style type="text/css" media="all">
+          @import url("../style/maven-base.css");
+          
+          @import url("../style/maven-theme.css");@import url("../style/project.css");</style><link rel="stylesheet" href="../style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta></head><body class="composite"><div id="banner"><a href="http://commons.apache.org/" id="organizationLogo"><img alt="The Apache Software Foundation" src="http://commons.apache.org/images/logo.png"></img></a><a href="http://commons.apache.org/math/" id="projectLogo"><img alt="Math" src="../images/math.gif"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">Last published: 18 August 2007
+                <span class="separator">|</span> Doc for  1.2-SNAPSHOT
+                </div><div class="xright">
+        
+        <a href="http://commons.apache.org/" class="externalLink" title="External Link">Apache Commons</a>
+      </div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuMath"><h5>Math</h5><ul><li class="none"><a href="../index.html">Overview</a></li><li class="none"><a href="../proposal.html">Proposal</a></li><li class="none"><a href="../developers.html">Developers Guide</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.0/index.html" class="externalLink" title="External Link">Javadoc (1.0 release)</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.1/index.html" class="externalLink" title="External Link">Javadoc (1.1 release)</a></li><li class="none"><a href="../apidocs/index.html">Javadoc (1.2-SNAPSHOT)</a></li><li class="none"><a href="http://svn.apache.org/viewvc/commons/proper/math/trunk" class="externalLink" title="External Link">Source Repository (current)</a></li><li class="none"><a href="http://wiki.apache.org/commons/Math" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="menuUser_Guide"><h5>User Guide</h5><ul><li class="none"><a href="../userguide/index.html">Contents</a></li><li class="none"><a href="../userguide/overview.html">Overview</a></li><li class="none"><a href="../userguide/stat.html">Statistics</a></li><li class="none"><a href="../userguide/random.html">Data Generation</a></li><li class="none"><a href="../userguide/linear.html">Linear Algebra</a></li><li class="none"><a href="../userguide/analysis.html">Numerical Analysis</a></li><li class="none"><a href="../userguide/special.html">Special Functions</a></li><li class="none"><a href="../userguide/utilities.html">Utilities</a></li><li class="none"><a href="../userguide/complex.html">Complex Numbers</a></li><li class="none"><strong><a href="../userguide/distribution.html">Distributions</a></strong></li><li class="none"><a href="../userguide/fraction.html">Fractions</a></li><li class="none"><a href="../userguide/transform.html">Transform Methods</a></li><li class="none"><a href="../userguide/geometry.html">3D Geometry</a></li><li class="none"><a href="../userguide/estimation.html">Parametric Estimation</a></li><li class="none"><a href="../userguide/optimization.html">Optimization</a></li><li class="none"><a href="../userguide/ode.html">Ordinary Differential Equations</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="../index.html">About</a></li><li class="collapsed"><a href="../project-info.html">Project Info</a></li><li class="collapsed"><a href="../maven-reports.html">Project Reports</a></li><li class="none"><a href="http://commons.apache.org/charter.html" class="externalLink" title="External Link">Development Process</a></li></ul></div><div id="menuCommons"><h5>Commons</h5><ul><li class="none"><a href="http://jakarta.apache.org/commons/" class="externalLink" title="External Link">Home</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/components.html" class="externalLink" title="External Link">Components</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/sandbox/index.html" class="externalLink" title="External Link">Sandbox</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/dormant/index.html" class="externalLink" title="External Link">Dormant</a></li><li class="none"><a href="http://jakarta.apache.org/commons/volunteering.html" class="externalLink" title="External Link">Volunteering</a></li><li class="none"><a href="http://jakarta.apache.org/commons/patches.html" class="externalLink" title="External Link">Contributing Patches</a></li><li class="none"><a href="http://jakarta.apache.org/commons/building.html" class="externalLink" title="External Link">Building Components</a></li><li class="none"><a href="http://jakarta.apache.org/commons/releases/index.html" class="externalLink" title="External Link">Releasing Components</a></li><li class="none"><a href="http://wiki.apache.org/jakarta-commons/FrontPage" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="legend"><h5>Legend</h5><ul><li class="externalLink">External Link</li><li class="newWindow">Opens in a new window</li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="../images/logos/maven-feather.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="8_Probability_Distributions"></a><h2>8 Probability Distributions</h2>
+      <div class="subsection"><a name="8_1_Overview"></a><h3>8.1 Overview</h3>
+        <p>
+          The distributions package provide a framework for some commonly used
+          probability distributions.
+        </p>
+      </div>
+      <div class="subsection"><a name="8_2_Distribution_Framework"></a><h3>8.2 Distribution Framework</h3>
+        <p>
+          The distribution framework provides the means to compute probability density
+          function (PDF) probabilities and cumulative distribution function (CDF)
+          probabilities for common probability distributions. Along with the direct
+          computation of PDF and CDF probabilities, the framework also allows for the
+          computation of inverse PDF and inverse CDF values.
+        </p>
+        <p>
+          In order to use the distribution framework, first a distribution object must
+          be created. It is encouraged that all distribution object creation occurs via
+          the <code>org.apache.commons.math.distribution.DistributionFactory</code>
+          class. <code>DistributionFactory</code> is a simple factory used to create all
+          of the distribution objects supported by Commons-Math. The typical usage of 
+          <code>DistributionFactory</code> to create a distribution object would be:
+        </p>
+        
+    <div class="source"><pre>DistributionFactory factory = DistributionFactory.newInstance();
+BinomialDistribution binomial = factory.createBinomialDistribution(10, .75);</pre></div>
+  
+        <p>
+          The distributions that can be instantiated via the <code>DistributionFactory</code>
+          are detailed below:
+          <table class="bodyTable">
+            <tr class="a"><th>Distribution</th><th>Factory Method</th><th>Parameters</th></tr>
+            <tr class="b"><td>Binomial</td><td>createBinomialDistribution</td><td><div>Number of trials</div><div>Probability of success</div></td></tr>
+            <tr class="a"><td>Cauchy</td><td>createCauchyDistribution</td><td><div>Median</div><div>Scale</div></td></tr>
+            <tr class="b"><td>Chi-Squared</td><td>createChiSquaredDistribution</td><td><div>Degrees of freedom</div></td></tr>
+            <tr class="a"><td>Exponential</td><td>createExponentialDistribution</td><td><div>Mean</div></td></tr>
+            <tr class="b"><td>F</td><td>createFDistribution</td><td><div>Numerator degrees of freedom</div><div>Denominator degrees of freedom</div></td></tr>
+            <tr class="a"><td>Gamma</td><td>createGammaDistribution</td><td><div>Alpha</div><div>Beta</div></td></tr>
+            <tr class="b"><td>Hypergeometric</td><td>createHypergeometricDistribution</td><td><div>Population size</div><div>Number of successes in population</div><div>Sample size</div></td></tr>
+            <tr class="a"><td>Normal (Gaussian)</td><td>createNormalDistribution</td><td><div>Mean</div><div>Standard Deviation</div></td></tr>
+            <tr class="b"><td>Poisson</td><td>createPoissonDistribution</td><td><div>Mean</div></td></tr>
+            <tr class="a"><td>t</td><td>createTDistribution</td><td><div>Degrees of freedom</div></td></tr>
+            <tr class="b"><td>Weibull</td><td>createWeibullDistribution</td><td><div>Shape</div><div>Scale</div><div>Location</div></td></tr>
+            <tr class="a"><td>Pascal</td><td>createPascalDistribution</td><td><div>numberOfSuccesses</div><div>probabilityOfSuccess</div></td></tr>
+          </table>
+        </p>
+        <p>
+          Using a distribution object, PDF and CDF probabilities are easily computed
+          using the <code>cumulativeProbability</code> methods.  For a distribution <code>X</code>,
+          and a domain value, <code>x</code>,  <code>cumulativeProbability</code> computes
+          <code>P(X &lt;= x)</code> (i.e. the lower tail probability of <code>X</code>).
+        </p>
+        
+    <div class="source"><pre>DistributionFactory factory = DistributionFactory.newInstance();
+TDistribution t = factory.createTDistribution(29);
+double lowerTail = t.cumulativeProbability(-2.656);     // P(T &lt;= -2.656)
+double upperTail = 1.0 - t.cumulativeProbability(2.75); // P(T &gt;= 2.75)</pre></div>
+  
+        <p>
+          The inverse PDF and CDF values are just as easily computed using the
+          <code>inverseCumulativeProbability</code> methods.  For a distribution <code>X</code>,
+          and a probability, <code>p</code>, <code>inverseCumulativeProbability</code>
+          computes the domain value <code>x</code>, such that:
+          <ul>
+            <li><code>P(X &lt;= x) = p</code>, for continuous distributions</li>
+            <li><code>P(X &lt;= x) &lt;= p</code>, for discrete distributions</li>
+          </ul>
+          Notice the different cases for continuous and discrete distributions.  This is the result
+          of PDFs not being invertible functions.  As such, for discrete distributions, an exact
+          domain value can not be returned.  Only the "best" domain value.  For Commons-Math, the "best"
+          domain value is determined by the largest domain value whose cumulative probability is
+          less-than or equal to the given probability.
+        </p>
+      </div>
+      <div class="subsection"><a name="8_3_User_Defined_Distributions"></a><h3>8.3 User Defined Distributions</h3>
+        <p>
+        Since there are numerous distributions and Commons-Math only directly supports a handful,
+        it may be necessary to extend the distribution framework to satisfy individual needs.  It
+        is recommended that the <code>Distribution</code>, <code>ContinuousDistribution</code>,
+        <code>DiscreteDistribution</code>, and <code>IntegerDistribution</code> interfaces serve as
+        base types for any extension.  These serve as the basis for all the distributions directly
+        supported by Commons-Math and using those interfaces for implementation purposes will
+        insure any extension is compatible with the remainder of Commons-Math.  To aid in
+        implementing a distribution extension, the <code>AbstractDistribution</code>,
+        <code>AbstractContinuousDistribution</code>, and <code>AbstractIntegerDistribution</code>
+        provide implementation building blocks and offer a lot of default distribution
+        functionality.  By extending these abstract classes directly, a good portion of the
+        repetitive distribution implementation is already developed and should save time and effort
+        in developing user defined distributions.
+        </p>
+      </div>
+    </div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2003-2007, The Apache Software Foundation</div><div class="clear"><hr></hr></div></div></body></html>

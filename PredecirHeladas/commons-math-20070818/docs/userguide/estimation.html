@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>The Commons Math User Guide - Parametric Estimation - Math</title><style type="text/css" media="all">
+          @import url("../style/maven-base.css");
+          
+          @import url("../style/maven-theme.css");@import url("../style/project.css");</style><link rel="stylesheet" href="../style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta></head><body class="composite"><div id="banner"><a href="http://commons.apache.org/" id="organizationLogo"><img alt="The Apache Software Foundation" src="http://commons.apache.org/images/logo.png"></img></a><a href="http://commons.apache.org/math/" id="projectLogo"><img alt="Math" src="../images/math.gif"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">Last published: 18 August 2007
+                <span class="separator">|</span> Doc for  1.2-SNAPSHOT
+                </div><div class="xright">
+        
+        <a href="http://commons.apache.org/" class="externalLink" title="External Link">Apache Commons</a>
+      </div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuMath"><h5>Math</h5><ul><li class="none"><a href="../index.html">Overview</a></li><li class="none"><a href="../proposal.html">Proposal</a></li><li class="none"><a href="../developers.html">Developers Guide</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.0/index.html" class="externalLink" title="External Link">Javadoc (1.0 release)</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.1/index.html" class="externalLink" title="External Link">Javadoc (1.1 release)</a></li><li class="none"><a href="../apidocs/index.html">Javadoc (1.2-SNAPSHOT)</a></li><li class="none"><a href="http://svn.apache.org/viewvc/commons/proper/math/trunk" class="externalLink" title="External Link">Source Repository (current)</a></li><li class="none"><a href="http://wiki.apache.org/commons/Math" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="menuUser_Guide"><h5>User Guide</h5><ul><li class="none"><a href="../userguide/index.html">Contents</a></li><li class="none"><a href="../userguide/overview.html">Overview</a></li><li class="none"><a href="../userguide/stat.html">Statistics</a></li><li class="none"><a href="../userguide/random.html">Data Generation</a></li><li class="none"><a href="../userguide/linear.html">Linear Algebra</a></li><li class="none"><a href="../userguide/analysis.html">Numerical Analysis</a></li><li class="none"><a href="../userguide/special.html">Special Functions</a></li><li class="none"><a href="../userguide/utilities.html">Utilities</a></li><li class="none"><a href="../userguide/complex.html">Complex Numbers</a></li><li class="none"><a href="../userguide/distribution.html">Distributions</a></li><li class="none"><a href="../userguide/fraction.html">Fractions</a></li><li class="none"><a href="../userguide/transform.html">Transform Methods</a></li><li class="none"><a href="../userguide/geometry.html">3D Geometry</a></li><li class="none"><strong><a href="../userguide/estimation.html">Parametric Estimation</a></strong></li><li class="none"><a href="../userguide/optimization.html">Optimization</a></li><li class="none"><a href="../userguide/ode.html">Ordinary Differential Equations</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="../index.html">About</a></li><li class="collapsed"><a href="../project-info.html">Project Info</a></li><li class="collapsed"><a href="../maven-reports.html">Project Reports</a></li><li class="none"><a href="http://commons.apache.org/charter.html" class="externalLink" title="External Link">Development Process</a></li></ul></div><div id="menuCommons"><h5>Commons</h5><ul><li class="none"><a href="http://jakarta.apache.org/commons/" class="externalLink" title="External Link">Home</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/components.html" class="externalLink" title="External Link">Components</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/sandbox/index.html" class="externalLink" title="External Link">Sandbox</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/dormant/index.html" class="externalLink" title="External Link">Dormant</a></li><li class="none"><a href="http://jakarta.apache.org/commons/volunteering.html" class="externalLink" title="External Link">Volunteering</a></li><li class="none"><a href="http://jakarta.apache.org/commons/patches.html" class="externalLink" title="External Link">Contributing Patches</a></li><li class="none"><a href="http://jakarta.apache.org/commons/building.html" class="externalLink" title="External Link">Building Components</a></li><li class="none"><a href="http://jakarta.apache.org/commons/releases/index.html" class="externalLink" title="External Link">Releasing Components</a></li><li class="none"><a href="http://wiki.apache.org/jakarta-commons/FrontPage" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="legend"><h5>Legend</h5><ul><li class="externalLink">External Link</li><li class="newWindow">Opens in a new window</li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="../images/logos/maven-feather.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="12_Parametric_Estimation"></a><h2>12 Parametric Estimation</h2>
+      <div class="subsection"><a name="12_1_Overview"></a><h3>12.1 Overview</h3>
+        <p>
+        The estimation package provides classes to fit some non-linear model
+        to available observations depending on it. These problems are commonly
+        called estimation problems.
+        </p>
+        <p>
+        The estimation problems considered here are parametric problems where
+        a user-provided model depends on initially unknown scalar parameters and
+        several measurements made on values that depend on the model are available.
+        As examples, one can consider the center and radius of a circle given
+        points approximately lying on a ring, or a satellite orbit given range,
+        range-rate and angular measurements from various ground stations.
+        </p>
+        <p>
+        One important class of estimation problems is weighted least squares problems.
+        They basically consist in finding the values for some parameters p<sub>k</sub>
+        such that a cost function J = 
+        
+        sum(w<sub>i</sub> r<sub>i</sub><sup>2</sup>)
+        is minimized. The various r<sub>i</sub> terms represent the deviation
+        r<sub>i</sub> = mes<sub>i</sub> - mod<sub>i</sub> between the measurements and
+        the parameterized models. The w<sub>i</sub> factors are the measurements weights,
+        they are often chosen either all equal to 1.0 or proportional to the inverse of
+        the variance of the measurement type. The solver adjusts the values of the
+        estimated parameters p<sub>k</sub> which are not bound (i.e. the free parameters).
+        It does not touch the parameters which have been put in a bound state by the user.        
+        </p>
+        <p>
+          The aim of this package is similar to the aim of the optimization package, but the
+          algorithms are entirely differents as:
+          <ul>
+            <li>
+              they need the partial derivatives of the measurements
+              with respect to the free parameters
+            </li>
+            <li>
+              they are residuals based instead of generic cost functions based
+            </li>
+          </ul>
+        </p>
+        
+      </div>
+      <div class="subsection"><a name="12_2_Models"></a><h3>12.2 Models</h3>
+        The <a href="../apidocs/org/apache/commons/math/estimation/EstimationProblem.html">
+        org.apache.commons.math.estimation.EstimationProblem</a> interface is a very
+        simple container packing together parameters and measurements.
+      </div>
+      <div class="subsection"><a name="12_3_Parameters"></a><h3>12.3 Parameters</h3>
+        <p>
+        The <a href="../apidocs/org/apache/commons/math/estimation/EstimatedParameter.html">
+        org.apache.commons.math.estimation.EstimatedParameter</a> class to represent each
+        estimated parameter. The parameters are set up with a guessed value which will be
+        adjusted by the solver until a best fit is achieved. It is possible to change which
+        parameters are modified and which are preserved thanks to a bound property. Such
+        settings are often needed by expert users to handle contingency cases with very
+        low observability.
+        </p>
+      </div>
+      <div class="subsection"><a name="12_4_Measurements"></a><h3>12.4 Measurements</h3>
+        <p>
+        The user extends the <a href="../apidocs/org/apache/commons/math/estimation/WeightedMeasurement.html">
+        org.apache.commons.math.estimation.WeightedMeasurement</a> abstract class to define its
+        own measurements. Each measurement types should have its own implementing class, for
+        example in the satellite example above , the user should define three classes, one
+        for range measurements, one for range-rates measurements and one for angular measurements.
+        Each measurement would correspond to an instance of the appropriate class, set up with
+        the date, a reference to the ground station, the weight and the measured value.
+         </p>
+      </div>
+      <div class="subsection"><a name="12_5_Solvers"></a><h3>12.5 Solvers</h3>
+        <p>
+        The package provides two common <a href="../apidocs/org/apache/commons/math/estimation/Estimator.html">
+        org.apache.commons.math.estimation.Estimator</a> implementations to solve weighted
+        least squares problems. The first one is based on the
+        <a href="../apidocs/org/apache/commons/math/estimation/GaussNewtonEstimator.html">Gauss-Newton</a> method.
+        The second one is based on the
+        <a href="../apidocs/org/apache/commons/math/estimation/LevenbergMarquardtEstimator.html">Levenberg-Marquardt</a>
+        method. The first one is best suited when a good approximation of the parameters is known while the second one
+        is more robust and can handle starting points far from the solution.
+        </p>
+      </div>
+     </div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2003-2007, The Apache Software Foundation</div><div class="clear"><hr></hr></div></div></body></html>

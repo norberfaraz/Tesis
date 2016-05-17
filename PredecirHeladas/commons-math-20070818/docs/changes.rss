@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>Changes report</title>
+    <link>http://commons.apache.org/math/</link>
+    <description>Changes report</description>
+    <language>en-us</language>
+    <copyright>Copyright 2004 The Apache Software Foundation</copyright>
+    <item>
+      <title>15 change(s) for version 1.2-SNAPSHOT</title>
+      <link>http://commons.apache.org/math//changes-report.html</link>
+      <description>
+        <table border="1">
+          <tr>
+            <th style="width:50px">Type</th>
+            <th>Changes</th>
+            <th style="width:70px">By</th>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Fixed numerous warnings in test code.</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#luc">luc</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Use the initial guess provided by the user in BrentSolver.solve(), thus improving speed. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-156">MATH-156</a>. Thanks to Tyler Ward .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#luc">luc</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>Added the estimation optimization, geometry and ode package from the Mantissa library.</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#luc">luc</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Made ComplexFormat format double values with a provided NumberFormat instance instead of using the real part format for all values. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-18">MATH-18</a>. Thanks to Phil Steitz .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#brentworden">brentworden</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>Added Pascal distribution implementation. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-120">MATH-120</a>. Thanks to Todd C. Parnell .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>Added QR Decomposition. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-148">MATH-148</a>. Thanks to Joni Salonen .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Modified ProperFractionFormat to reject embedded minus signs. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-60">MATH-60</a>. Thanks to Nhung Nnguyen .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Added a nextAfter method in MathUtils to return the next machine-representable number in a specified direction from a given floating point number. Used this to ensure that MathUtils.round does not return incorrect results for numbers with bad IEEE754 representations. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-151">MATH-151</a>. Thanks to Luc Maisonobe .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>Added Fast Fourier Transform implementation. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-140">MATH-140</a>. Thanks to Xiaogang Zhang .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Modified getSumSquaredErrors method in SimpleRegression to always return a non-negative result. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-85">MATH-85</a>. Thanks to Mark Osborn, Luc Maisonobe .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Corrected nextInt and nextLong to handle wide value ranges. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-153">MATH-153</a>. Thanks to Remi Arntzen .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#brentworden">brentworden</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Increased default precision of Gamma and Beta functions. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-166">MATH-166</a>. Thanks to Lukas Theussl .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>Added log function to MathUtils. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-158">MATH-158</a>. Thanks to Hasan Diwan .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>Added two sample (binned comparison) ChiSquare test. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-160">MATH-160</a>. Thanks to Matthias Hummel .</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Modified NormalDistributionImpl.cumulativeProbablity to catch MaxIterationsExceededException and return 0 or 1, resp. if the argument is more than 20 standard deviations from the mean. Fixes
+              <a href="http://issues.apache.org/jira/browse/MATH-167">MATH-167</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/math//team-list.html#psteitz">psteitz</a>
+            </td>
+          </tr>
+        </table>
+      </description>
+    </item>
+  </channel>
+</rss>

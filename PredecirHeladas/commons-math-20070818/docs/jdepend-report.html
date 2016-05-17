@@ -1,0 +1,2722 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>JDepend Source Code Analysis - Math</title><style type="text/css" media="all">
+          @import url("./style/maven-base.css");
+          
+          @import url("./style/maven-theme.css");@import url("./style/project.css");</style><link rel="stylesheet" href="./style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta><style type="text/css">.jdepend td ul, .jdepend td ul li { margin:0; padding:0; list-style-type: none; }</style></head><body class="jdepend"><div id="banner"><a href="http://commons.apache.org/" id="organizationLogo"><img alt="The Apache Software Foundation" src="http://commons.apache.org/images/logo.png"></img></a><a href="http://commons.apache.org/math/" id="projectLogo"><img alt="Math" src="./images/math.gif"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">Last published: 18 August 2007
+                <span class="separator">|</span> Doc for  1.2-SNAPSHOT
+                </div><div class="xright">
+        
+        <a href="http://commons.apache.org/" class="externalLink" title="External Link">Apache Commons</a>
+      </div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuMath"><h5>Math</h5><ul><li class="none"><a href="index.html">Overview</a></li><li class="none"><a href="proposal.html">Proposal</a></li><li class="none"><a href="developers.html">Developers Guide</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.0/index.html" class="externalLink" title="External Link">Javadoc (1.0 release)</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.1/index.html" class="externalLink" title="External Link">Javadoc (1.1 release)</a></li><li class="none"><a href="apidocs/index.html">Javadoc (1.2-SNAPSHOT)</a></li><li class="none"><a href="http://svn.apache.org/viewvc/commons/proper/math/trunk" class="externalLink" title="External Link">Source Repository (current)</a></li><li class="none"><a href="http://wiki.apache.org/commons/Math" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="menuUser_Guide"><h5>User Guide</h5><ul><li class="none"><a href="userguide/index.html">Contents</a></li><li class="none"><a href="userguide/overview.html">Overview</a></li><li class="none"><a href="userguide/stat.html">Statistics</a></li><li class="none"><a href="userguide/random.html">Data Generation</a></li><li class="none"><a href="userguide/linear.html">Linear Algebra</a></li><li class="none"><a href="userguide/analysis.html">Numerical Analysis</a></li><li class="none"><a href="userguide/special.html">Special Functions</a></li><li class="none"><a href="userguide/utilities.html">Utilities</a></li><li class="none"><a href="userguide/complex.html">Complex Numbers</a></li><li class="none"><a href="userguide/distribution.html">Distributions</a></li><li class="none"><a href="userguide/fraction.html">Fractions</a></li><li class="none"><a href="userguide/transform.html">Transform Methods</a></li><li class="none"><a href="userguide/geometry.html">3D Geometry</a></li><li class="none"><a href="userguide/estimation.html">Parametric Estimation</a></li><li class="none"><a href="userguide/optimization.html">Optimization</a></li><li class="none"><a href="userguide/ode.html">Ordinary Differential Equations</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="index.html">About</a></li><li class="collapsed"><a href="project-info.html">Project Info</a></li><li class="expanded"><a href="maven-reports.html">Project Reports</a><ul><li class="none"><a href="changes-report.html">Changes</a></li><li class="none"><a href="cobertura/index.html" class="newWindow" title="New Window" target="_blank">Cobertura</a></li><li class="none"><a href="pmd-report.html">PMD Report</a></li><li class="none"><a href="checkstyle-report.html">Checkstyle</a></li><li class="none"><a href="apidocs/index.html" class="newWindow" title="New Window" target="_blank">JavaDocs</a></li><li class="none"><a href="javadoc.html">JavaDoc Report</a></li><li class="none"><a href="javadoc-warnings-report.html">JavaDoc Warnings Report</a></li><li class="none"><strong><a href="jdepend-report.html">Metrics</a></strong></li><li class="none"><a href="junit-report.html">Unit Tests</a></li><li class="none"><a href="xref/index.html" class="newWindow" title="New Window" target="_blank">Source Xref</a></li><li class="none"><a href="xref-test/index.html" class="newWindow" title="New Window" target="_blank">Test Xref</a></li><li class="none"><a href="license.html">Project License</a></li></ul></li><li class="none"><a href="http://commons.apache.org/charter.html" class="externalLink" title="External Link">Development Process</a></li></ul></div><div id="menuCommons"><h5>Commons</h5><ul><li class="none"><a href="http://jakarta.apache.org/commons/" class="externalLink" title="External Link">Home</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/components.html" class="externalLink" title="External Link">Components</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/sandbox/index.html" class="externalLink" title="External Link">Sandbox</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/dormant/index.html" class="externalLink" title="External Link">Dormant</a></li><li class="none"><a href="http://jakarta.apache.org/commons/volunteering.html" class="externalLink" title="External Link">Volunteering</a></li><li class="none"><a href="http://jakarta.apache.org/commons/patches.html" class="externalLink" title="External Link">Contributing Patches</a></li><li class="none"><a href="http://jakarta.apache.org/commons/building.html" class="externalLink" title="External Link">Building Components</a></li><li class="none"><a href="http://jakarta.apache.org/commons/releases/index.html" class="externalLink" title="External Link">Releasing Components</a></li><li class="none"><a href="http://wiki.apache.org/jakarta-commons/FrontPage" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="legend"><h5>Legend</h5><ul><li class="externalLink">External Link</li><li class="newWindow">Opens in a new window</li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="./images/logos/maven-feather.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="Metric_Results"></a><h2>Metric Results</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p>
+      <p>The following document contains the results of a
+        <a href="http://www.clarkware.com/software/JDepend.html" class="externalLink" title="External Link">JDepend</a>metric analysis. The various metrics are defined at the bottom of this document.</p>
+    </div><div class="section"><a name="Summary"></a><h2>Summary</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p>
+      <table class="bodyTable">
+        <thead>
+          <tr class="b">
+            <th title="Package">Package</th>
+            <th style="text-align:right">
+              <acronym title="Total Classes">TC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Abstract Classes">AC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Concrete Classes">CC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Afferent Couplings">AC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Efferent Couplings">EC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Abstractness">A</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Instability">I</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Distance">D</acronym>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math">org.apache.commons.math</a>
+            </td>
+            <td style="text-align:right">9</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">9</td>
+            <td style="text-align:right">14</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">22%</td>
+            <td style="text-align:right">78%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_analysis">org.apache.commons.math.analysis</a>
+            </td>
+            <td style="text-align:right">27</td>
+            <td style="text-align:right">8</td>
+            <td style="text-align:right">19</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right">0.3</td>
+            <td style="text-align:right">70%</td>
+            <td style="text-align:right">0%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_complex">org.apache.commons.math.complex</a>
+            </td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">71%</td>
+            <td style="text-align:right">29%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_distribution">org.apache.commons.math.distribution</a>
+            </td>
+            <td style="text-align:right">34</td>
+            <td style="text-align:right">20</td>
+            <td style="text-align:right">14</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">6</td>
+            <td style="text-align:right">0.59</td>
+            <td style="text-align:right">75%</td>
+            <td style="text-align:right">34%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_estimation">org.apache.commons.math.estimation</a>
+            </td>
+            <td style="text-align:right">8</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">0.38</td>
+            <td style="text-align:right">100%</td>
+            <td style="text-align:right">38%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_fraction">org.apache.commons.math.fraction</a>
+            </td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">100%</td>
+            <td style="text-align:right">0%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_geometry">org.apache.commons.math.geometry</a>
+            </td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">100%</td>
+            <td style="text-align:right">0%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_linear">org.apache.commons.math.linear</a>
+            </td>
+            <td style="text-align:right">9</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">6</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0.33</td>
+            <td style="text-align:right">50%</td>
+            <td style="text-align:right">17%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_ode">org.apache.commons.math.ode</a>
+            </td>
+            <td style="text-align:right">43</td>
+            <td style="text-align:right">14</td>
+            <td style="text-align:right">29</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">6</td>
+            <td style="text-align:right">0.33</td>
+            <td style="text-align:right">100%</td>
+            <td style="text-align:right">33%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_optimization">org.apache.commons.math.optimization</a>
+            </td>
+            <td style="text-align:right">8</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">6</td>
+            <td style="text-align:right">0.38</td>
+            <td style="text-align:right">100%</td>
+            <td style="text-align:right">38%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_random">org.apache.commons.math.random</a>
+            </td>
+            <td style="text-align:right">21</td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right">14</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">8</td>
+            <td style="text-align:right">0.33</td>
+            <td style="text-align:right">89%</td>
+            <td style="text-align:right">22%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_special">org.apache.commons.math.special</a>
+            </td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">80%</td>
+            <td style="text-align:right">20%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_stat">org.apache.commons.math.stat</a>
+            </td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">8</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">89%</td>
+            <td style="text-align:right">11%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+            </td>
+            <td style="text-align:right">10</td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">6</td>
+            <td style="text-align:right">8</td>
+            <td style="text-align:right">0.7</td>
+            <td style="text-align:right">57%</td>
+            <td style="text-align:right">27%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_stat_descriptive_moment">org.apache.commons.math.stat.descriptive.moment</a>
+            </td>
+            <td style="text-align:right">12</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">12</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">6</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">67%</td>
+            <td style="text-align:right">33%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_stat_descriptive_rank">org.apache.commons.math.stat.descriptive.rank</a>
+            </td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">67%</td>
+            <td style="text-align:right">33%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_stat_descriptive_summary">org.apache.commons.math.stat.descriptive.summary</a>
+            </td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">50%</td>
+            <td style="text-align:right">50%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_stat_inference">org.apache.commons.math.stat.inference</a>
+            </td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">6</td>
+            <td style="text-align:right">0.43</td>
+            <td style="text-align:right">100%</td>
+            <td style="text-align:right">43%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_stat_regression">org.apache.commons.math.stat.regression</a>
+            </td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">100%</td>
+            <td style="text-align:right">0%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#org_apache_commons_math_transform">org.apache.commons.math.transform</a>
+            </td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">100%</td>
+            <td style="text-align:right">0%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#org_apache_commons_math_util">org.apache.commons.math.util</a>
+            </td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">0.43</td>
+            <td style="text-align:right">42%</td>
+            <td style="text-align:right">15%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><div class="section"><a name="Packages"></a><h2>Packages</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p>
+      <div class="subsection"><a name="org_apache_commons_math"></a><h3>org.apache.commons.math</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>14</td>
+              <td>4</td>
+              <td>0%</td>
+              <td>22%</td>
+              <td>78%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ArgumentOutsideDomainException.html">ArgumentOutsideDomainException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ConvergenceException.html">ConvergenceException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/DimensionMismatchException.html">DimensionMismatchException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/DuplicateSampleAbscissaException.html">DuplicateSampleAbscissaException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/FunctionEvaluationException.html">FunctionEvaluationException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/MathConfigurationException.html">MathConfigurationException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/MathException.html">MathException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/MaxIterationsExceededException.html">MaxIterationsExceededException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/MessagesResources_fr.html">MessagesResources_fr</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_analysis">org.apache.commons.math.analysis</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_distribution">org.apache.commons.math.distribution</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_estimation">org.apache.commons.math.estimation</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_fraction">org.apache.commons.math.fraction</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_geometry">org.apache.commons.math.geometry</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_ode">org.apache.commons.math.ode</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_optimization">org.apache.commons.math.optimization</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_random">org.apache.commons.math.random</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_special">org.apache.commons.math.special</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_moment">org.apache.commons.math.stat.descriptive.moment</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_inference">org.apache.commons.math.stat.inference</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_regression">org.apache.commons.math.stat.regression</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_transform">org.apache.commons.math.transform</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_util">org.apache.commons.math.util</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_text">java.text</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_analysis"></a><h3>org.apache.commons.math.analysis</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>3</td>
+              <td>7</td>
+              <td>30%</td>
+              <td>70%</td>
+              <td>0%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/DifferentiableUnivariateRealFunction.html">DifferentiableUnivariateRealFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/UnivariateRealFunction.html">UnivariateRealFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/UnivariateRealIntegrator.html">UnivariateRealIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/UnivariateRealIntegratorImpl.html">UnivariateRealIntegratorImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/UnivariateRealInterpolator.html">UnivariateRealInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/UnivariateRealSolver.html">UnivariateRealSolver</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/UnivariateRealSolverFactory.html">UnivariateRealSolverFactory</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/UnivariateRealSolverImpl.html">UnivariateRealSolverImpl</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/BisectionSolver.html">BisectionSolver</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/BrentSolver.html">BrentSolver</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/DividedDifferenceInterpolator.html">DividedDifferenceInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/LaguerreSolver.html">LaguerreSolver</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/MullerSolver.html">MullerSolver</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/NevilleInterpolator.html">NevilleInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/NewtonSolver.html">NewtonSolver</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/PolynomialFunction.html">PolynomialFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/PolynomialFunctionLagrangeForm.html">PolynomialFunctionLagrangeForm</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/PolynomialFunctionNewtonForm.html">PolynomialFunctionNewtonForm</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/PolynomialSplineFunction.html">PolynomialSplineFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/RiddersSolver.html">RiddersSolver</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/RombergIntegrator.html">RombergIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/SecantSolver.html">SecantSolver</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/SimpsonIntegrator.html">SimpsonIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/SplineInterpolator.html">SplineInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/TrapezoidIntegrator.html">TrapezoidIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/UnivariateRealSolverFactoryImpl.html">UnivariateRealSolverFactoryImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/analysis/UnivariateRealSolverUtils.html">UnivariateRealSolverUtils</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_distribution">org.apache.commons.math.distribution</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_ode">org.apache.commons.math.ode</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_transform">org.apache.commons.math.transform</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_discovery_tools">org.apache.commons.discovery.tools</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_complex">org.apache.commons.math.complex</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_util">org.apache.commons.math.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_complex"></a><h3>org.apache.commons.math.complex</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>2</td>
+              <td>5</td>
+              <td>0%</td>
+              <td>71%</td>
+              <td>29%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/complex/Complex.html">Complex</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/complex/ComplexFormat.html">ComplexFormat</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/complex/ComplexUtils.html">ComplexUtils</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_analysis">org.apache.commons.math.analysis</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_transform">org.apache.commons.math.transform</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_text">java.text</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_util">org.apache.commons.math.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_distribution"></a><h3>org.apache.commons.math.distribution</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>2</td>
+              <td>6</td>
+              <td>59%</td>
+              <td>75%</td>
+              <td>34%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/AbstractContinuousDistribution.html">AbstractContinuousDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/AbstractDistribution.html">AbstractDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/AbstractIntegerDistribution.html">AbstractIntegerDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/BinomialDistribution.html">BinomialDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/CauchyDistribution.html">CauchyDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/ChiSquaredDistribution.html">ChiSquaredDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/ContinuousDistribution.html">ContinuousDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/DiscreteDistribution.html">DiscreteDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/Distribution.html">Distribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/DistributionFactory.html">DistributionFactory</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/ExponentialDistribution.html">ExponentialDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/FDistribution.html">FDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/GammaDistribution.html">GammaDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/HypergeometricDistribution.html">HypergeometricDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/IntegerDistribution.html">IntegerDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/NormalDistribution.html">NormalDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/PascalDistribution.html">PascalDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/PoissonDistribution.html">PoissonDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/TDistribution.html">TDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/WeibullDistribution.html">WeibullDistribution</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/AbstractContinuousDistribution.html">AbstractContinuousDistribution$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/BinomialDistributionImpl.html">BinomialDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/CauchyDistributionImpl.html">CauchyDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/ChiSquaredDistributionImpl.html">ChiSquaredDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/DistributionFactoryImpl.html">DistributionFactoryImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/ExponentialDistributionImpl.html">ExponentialDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/FDistributionImpl.html">FDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/GammaDistributionImpl.html">GammaDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/HypergeometricDistributionImpl.html">HypergeometricDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/NormalDistributionImpl.html">NormalDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/PascalDistributionImpl.html">PascalDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/PoissonDistributionImpl.html">PoissonDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/TDistributionImpl.html">TDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/distribution/WeibullDistributionImpl.html">WeibullDistributionImpl</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_inference">org.apache.commons.math.stat.inference</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_regression">org.apache.commons.math.stat.regression</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_analysis">org.apache.commons.math.analysis</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_special">org.apache.commons.math.special</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_util">org.apache.commons.math.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_estimation"></a><h3>org.apache.commons.math.estimation</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>5</td>
+              <td>38%</td>
+              <td>100%</td>
+              <td>38%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/estimation/EstimationProblem.html">EstimationProblem</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/estimation/Estimator.html">Estimator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/estimation/WeightedMeasurement.html">WeightedMeasurement</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/estimation/EstimatedParameter.html">EstimatedParameter</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/estimation/EstimationException.html">EstimationException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/estimation/GaussNewtonEstimator.html">GaussNewtonEstimator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/estimation/LevenbergMarquardtEstimator.html">LevenbergMarquardtEstimator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/estimation/SimpleEstimationProblem.html">SimpleEstimationProblem</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_linear">org.apache.commons.math.linear</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_fraction"></a><h3>org.apache.commons.math.fraction</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>7</td>
+              <td>0%</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/fraction/Fraction.html">Fraction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/fraction/FractionConversionException.html">FractionConversionException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/fraction/FractionFormat.html">FractionFormat</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/fraction/ProperFractionFormat.html">ProperFractionFormat</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_math">java.math</a>
+                  </li>
+                  <li>
+                    <a href="#java_text">java.text</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_util">org.apache.commons.math.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_geometry"></a><h3>org.apache.commons.math.geometry</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>3</td>
+              <td>0%</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/geometry/CardanEulerSingularityException.html">CardanEulerSingularityException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/geometry/NotARotationMatrixException.html">NotARotationMatrixException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/geometry/Rotation.html">Rotation</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/geometry/RotationOrder.html">RotationOrder</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/geometry/Vector3D.html">Vector3D</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_linear"></a><h3>org.apache.commons.math.linear</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>4</td>
+              <td>4</td>
+              <td>33%</td>
+              <td>50%</td>
+              <td>17%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/linear/BigMatrix.html">BigMatrix</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/linear/QRDecomposition.html">QRDecomposition</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/linear/RealMatrix.html">RealMatrix</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/linear/BigMatrixImpl.html">BigMatrixImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/linear/InvalidMatrixException.html">InvalidMatrixException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/linear/MatrixIndexException.html">MatrixIndexException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/linear/MatrixUtils.html">MatrixUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/linear/QRDecompositionImpl.html">QRDecompositionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/linear/RealMatrixImpl.html">RealMatrixImpl</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_estimation">org.apache.commons.math.estimation</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_optimization">org.apache.commons.math.optimization</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_random">org.apache.commons.math.random</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_moment">org.apache.commons.math.stat.descriptive.moment</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_math">java.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_util">org.apache.commons.math.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_ode"></a><h3>org.apache.commons.math.ode</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>6</td>
+              <td>33%</td>
+              <td>100%</td>
+              <td>33%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/AbstractStepInterpolator.html">AbstractStepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/AdaptiveStepsizeIntegrator.html">AdaptiveStepsizeIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/FirstOrderDifferentialEquations.html">FirstOrderDifferentialEquations</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/FirstOrderIntegrator.html">FirstOrderIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/FirstOrderIntegratorFactory.html">FirstOrderIntegratorFactory</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/FixedStepHandler.html">FixedStepHandler</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/RungeKuttaFehlbergIntegrator.html">RungeKuttaFehlbergIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/RungeKuttaIntegrator.html">RungeKuttaIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/RungeKuttaStepInterpolator.html">RungeKuttaStepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/SecondOrderDifferentialEquations.html">SecondOrderDifferentialEquations</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/SecondOrderIntegrator.html">SecondOrderIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/StepHandler.html">StepHandler</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/StepInterpolator.html">StepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/SwitchingFunction.html">SwitchingFunction</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/ClassicalRungeKuttaIntegrator.html">ClassicalRungeKuttaIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/ClassicalRungeKuttaStepInterpolator.html">ClassicalRungeKuttaStepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/ContinuousOutputModel.html">ContinuousOutputModel</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/DerivativeException.html">DerivativeException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/DormandPrince54Integrator.html">DormandPrince54Integrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/DormandPrince54StepInterpolator.html">DormandPrince54StepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/DormandPrince853Integrator.html">DormandPrince853Integrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/DormandPrince853StepInterpolator.html">DormandPrince853StepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/DummyStepHandler.html">DummyStepHandler</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/DummyStepInterpolator.html">DummyStepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/EulerIntegrator.html">EulerIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/EulerStepInterpolator.html">EulerStepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/FirstOrderConverter.html">FirstOrderConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/FirstOrderIntegratorFactoryImpl.html">FirstOrderIntegratorFactoryImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/GillIntegrator.html">GillIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/GillStepInterpolator.html">GillStepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/GraggBulirschStoerIntegrator.html">GraggBulirschStoerIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/GraggBulirschStoerStepInterpolator.html">GraggBulirschStoerStepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/HighamHall54Integrator.html">HighamHall54Integrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/HighamHall54StepInterpolator.html">HighamHall54StepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/IntegratorException.html">IntegratorException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/MidpointIntegrator.html">MidpointIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/MidpointStepInterpolator.html">MidpointStepInterpolator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/StepNormalizer.html">StepNormalizer</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/SwitchState.html">SwitchState</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/SwitchState.html">SwitchState$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/SwitchingFunctionsHandler.html">SwitchingFunctionsHandler</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/ThreeEighthesIntegrator.html">ThreeEighthesIntegrator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/ode/ThreeEighthesStepInterpolator.html">ThreeEighthesStepInterpolator</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_discovery_tools">org.apache.commons.discovery.tools</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_analysis">org.apache.commons.math.analysis</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_optimization"></a><h3>org.apache.commons.math.optimization</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>6</td>
+              <td>38%</td>
+              <td>100%</td>
+              <td>38%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/optimization/ConvergenceChecker.html">ConvergenceChecker</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/optimization/CostFunction.html">CostFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/optimization/DirectSearchOptimizer.html">DirectSearchOptimizer</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/optimization/CostException.html">CostException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/optimization/DirectSearchOptimizer.html">DirectSearchOptimizer$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/optimization/MultiDirectional.html">MultiDirectional</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/optimization/NelderMead.html">NelderMead</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/optimization/PointCostPair.html">PointCostPair</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_linear">org.apache.commons.math.linear</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_random">org.apache.commons.math.random</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_moment">org.apache.commons.math.stat.descriptive.moment</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_random"></a><h3>org.apache.commons.math.random</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>1</td>
+              <td>8</td>
+              <td>33%</td>
+              <td>89%</td>
+              <td>22%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/AbstractRandomGenerator.html">AbstractRandomGenerator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/EmpiricalDistribution.html">EmpiricalDistribution</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/EmpiricalDistributionImpl.html">EmpiricalDistributionImpl$DataAdapter</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/NormalizedRandomGenerator.html">NormalizedRandomGenerator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/RandomData.html">RandomData</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/RandomGenerator.html">RandomGenerator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/RandomVectorGenerator.html">RandomVectorGenerator</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/CorrelatedRandomVectorGenerator.html">CorrelatedRandomVectorGenerator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/EmpiricalDistributionImpl.html">EmpiricalDistributionImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/EmpiricalDistributionImpl.html">EmpiricalDistributionImpl$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/EmpiricalDistributionImpl.html">EmpiricalDistributionImpl$ArrayDataAdapter</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/EmpiricalDistributionImpl.html">EmpiricalDistributionImpl$DataAdapterFactory</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/EmpiricalDistributionImpl.html">EmpiricalDistributionImpl$StreamDataAdapter</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/GaussianRandomGenerator.html">GaussianRandomGenerator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/JDKRandomGenerator.html">JDKRandomGenerator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/NotPositiveDefiniteMatrixException.html">NotPositiveDefiniteMatrixException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/RandomAdaptor.html">RandomAdaptor</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/RandomDataImpl.html">RandomDataImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/UncorrelatedRandomVectorGenerator.html">UncorrelatedRandomVectorGenerator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/UniformRandomGenerator.html">UniformRandomGenerator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/random/ValueServer.html">ValueServer</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_optimization">org.apache.commons.math.optimization</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_net">java.net</a>
+                  </li>
+                  <li>
+                    <a href="#java_security">java.security</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_linear">org.apache.commons.math.linear</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_special"></a><h3>org.apache.commons.math.special</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>1</td>
+              <td>4</td>
+              <td>0%</td>
+              <td>80%</td>
+              <td>20%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/special/Beta.html">Beta</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/special/Beta.html">Beta$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/special/Erf.html">Erf</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/special/Gamma.html">Gamma</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/special/Gamma.html">Gamma$1</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_distribution">org.apache.commons.math.distribution</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_util">org.apache.commons.math.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_stat"></a><h3>org.apache.commons.math.stat</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>1</td>
+              <td>8</td>
+              <td>0%</td>
+              <td>89%</td>
+              <td>11%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/Frequency.html">Frequency</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/Frequency.html">Frequency$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/Frequency.html">Frequency$NaturalComparator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/StatUtils.html">StatUtils</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_inference">org.apache.commons.math.stat.inference</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_text">java.text</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_moment">org.apache.commons.math.stat.descriptive.moment</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_rank">org.apache.commons.math.stat.descriptive.rank</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_summary">org.apache.commons.math.stat.descriptive.summary</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_stat_descriptive"></a><h3>org.apache.commons.math.stat.descriptive</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>6</td>
+              <td>8</td>
+              <td>70%</td>
+              <td>57%</td>
+              <td>27%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/AbstractStorelessUnivariateStatistic.html">AbstractStorelessUnivariateStatistic</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/AbstractUnivariateStatistic.html">AbstractUnivariateStatistic</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/DescriptiveStatistics.html">DescriptiveStatistics</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/StatisticalSummary.html">StatisticalSummary</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.html">StorelessUnivariateStatistic</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/SummaryStatistics.html">SummaryStatistics</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/UnivariateStatistic.html">UnivariateStatistic</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/DescriptiveStatisticsImpl.html">DescriptiveStatisticsImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/StatisticalSummaryValues.html">StatisticalSummaryValues</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/SummaryStatisticsImpl.html">SummaryStatisticsImpl</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_random">org.apache.commons.math.random</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat">org.apache.commons.math.stat</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_moment">org.apache.commons.math.stat.descriptive.moment</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_rank">org.apache.commons.math.stat.descriptive.rank</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_summary">org.apache.commons.math.stat.descriptive.summary</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_inference">org.apache.commons.math.stat.inference</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_discovery_tools">org.apache.commons.discovery.tools</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_moment">org.apache.commons.math.stat.descriptive.moment</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_rank">org.apache.commons.math.stat.descriptive.rank</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_summary">org.apache.commons.math.stat.descriptive.summary</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_util">org.apache.commons.math.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_stat_descriptive_moment"></a><h3>org.apache.commons.math.stat.descriptive.moment</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>3</td>
+              <td>6</td>
+              <td>0%</td>
+              <td>67%</td>
+              <td>33%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/FirstMoment.html">FirstMoment</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/FourthMoment.html">FourthMoment</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/GeometricMean.html">GeometricMean</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/Kurtosis.html">Kurtosis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/Mean.html">Mean</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/SecondMoment.html">SecondMoment</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/Skewness.html">Skewness</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/StandardDeviation.html">StandardDeviation</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/ThirdMoment.html">ThirdMoment</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/Variance.html">Variance</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/VectorialCovariance.html">VectorialCovariance</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/moment/VectorialMean.html">VectorialMean</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_optimization">org.apache.commons.math.optimization</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat">org.apache.commons.math.stat</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_linear">org.apache.commons.math.linear</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_summary">org.apache.commons.math.stat.descriptive.summary</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_stat_descriptive_rank"></a><h3>org.apache.commons.math.stat.descriptive.rank</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>2</td>
+              <td>4</td>
+              <td>0%</td>
+              <td>67%</td>
+              <td>33%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/rank/Max.html">Max</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/rank/Median.html">Median</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/rank/Min.html">Min</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/rank/Percentile.html">Percentile</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_stat">org.apache.commons.math.stat</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_stat_descriptive_summary"></a><h3>org.apache.commons.math.stat.descriptive.summary</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>3</td>
+              <td>3</td>
+              <td>0%</td>
+              <td>50%</td>
+              <td>50%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/summary/Product.html">Product</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/summary/Sum.html">Sum</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/summary/SumOfLogs.html">SumOfLogs</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/descriptive/summary/SumOfSquares.html">SumOfSquares</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_stat">org.apache.commons.math.stat</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive_moment">org.apache.commons.math.stat.descriptive.moment</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_stat_inference"></a><h3>org.apache.commons.math.stat.inference</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>6</td>
+              <td>43%</td>
+              <td>100%</td>
+              <td>43%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/inference/ChiSquareTest.html">ChiSquareTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/inference/TTest.html">TTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/inference/TestFactory.html">TestFactory</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/inference/ChiSquareTestImpl.html">ChiSquareTestImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/inference/TTestImpl.html">TTestImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/inference/TestFactoryImpl.html">TestFactoryImpl</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/inference/TestUtils.html">TestUtils</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_discovery_tools">org.apache.commons.discovery.tools</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_distribution">org.apache.commons.math.distribution</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat">org.apache.commons.math.stat</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_stat_regression"></a><h3>org.apache.commons.math.stat.regression</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>4</td>
+              <td>0%</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/stat/regression/SimpleRegression.html">SimpleRegression</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_distribution">org.apache.commons.math.distribution</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_transform"></a><h3>org.apache.commons.math.transform</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>5</td>
+              <td>0%</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/transform/FastCosineTransformer.html">FastCosineTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/transform/FastFourierTransformer.html">FastFourierTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/transform/FastSineTransformer.html">FastSineTransformer</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_analysis">org.apache.commons.math.analysis</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_complex">org.apache.commons.math.complex</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="org_apache_commons_math_util"></a><h3>org.apache.commons.math.util</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>7</td>
+              <td>5</td>
+              <td>43%</td>
+              <td>42%</td>
+              <td>15%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/util/ContinuedFraction.html">ContinuedFraction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/util/DoubleArray.html">DoubleArray</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/util/NumberTransformer.html">NumberTransformer</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/org/apache/commons/math/util/DefaultTransformer.html">DefaultTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/util/MathUtils.html">MathUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/util/ResizableDoubleArray.html">ResizableDoubleArray</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/apache/commons/math/util/TransformerMap.html">TransformerMap</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#org_apache_commons_math_analysis">org.apache.commons.math.analysis</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_complex">org.apache.commons.math.complex</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_distribution">org.apache.commons.math.distribution</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_fraction">org.apache.commons.math.fraction</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_linear">org.apache.commons.math.linear</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_special">org.apache.commons.math.special</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math_stat_descriptive">org.apache.commons.math.stat.descriptive</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_math">java.math</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_math">org.apache.commons.math</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><div class="section"><a name="Cycles"></a><h2>Cycles</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p>
+      <table class="bodyTable">
+        <thead>
+          <tr class="b">
+            <th>Package</th>
+            <th>Cyclic Dependencies</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="a">
+            <td>org.apache.commons.math.optimization</td>
+            <td>
+              <ul>
+                <li>org.apache.commons.math.random</li>
+                <li>org.apache.commons.math.stat.descriptive</li>
+                <li>org.apache.commons.math.stat.descriptive.summary</li>
+                <li>org.apache.commons.math.stat.descriptive</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>org.apache.commons.math.random</td>
+            <td>
+              <ul>
+                <li>org.apache.commons.math.stat.descriptive</li>
+                <li>org.apache.commons.math.stat.descriptive.summary</li>
+                <li>org.apache.commons.math.stat.descriptive</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>org.apache.commons.math.stat</td>
+            <td>
+              <ul>
+                <li>org.apache.commons.math.stat.descriptive.summary</li>
+                <li>org.apache.commons.math.stat.descriptive</li>
+                <li>org.apache.commons.math.stat.descriptive.summary</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>org.apache.commons.math.stat.descriptive</td>
+            <td>
+              <ul>
+                <li>org.apache.commons.math.stat.descriptive.summary</li>
+                <li>org.apache.commons.math.stat.descriptive</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>org.apache.commons.math.stat.descriptive.moment</td>
+            <td>
+              <ul>
+                <li>org.apache.commons.math.stat.descriptive</li>
+                <li>org.apache.commons.math.stat.descriptive.summary</li>
+                <li>org.apache.commons.math.stat.descriptive</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>org.apache.commons.math.stat.descriptive.rank</td>
+            <td>
+              <ul>
+                <li>org.apache.commons.math.stat.descriptive</li>
+                <li>org.apache.commons.math.stat.descriptive.summary</li>
+                <li>org.apache.commons.math.stat.descriptive</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>org.apache.commons.math.stat.descriptive.summary</td>
+            <td>
+              <ul>
+                <li>org.apache.commons.math.stat.descriptive</li>
+                <li>org.apache.commons.math.stat.descriptive.summary</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>org.apache.commons.math.stat.inference</td>
+            <td>
+              <ul>
+                <li>org.apache.commons.math.stat.descriptive</li>
+                <li>org.apache.commons.math.stat.descriptive.summary</li>
+                <li>org.apache.commons.math.stat.descriptive</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><div class="section"><a name="Explanations"></a><h2>Explanations</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p>
+      <p>The following explanations are for quick reference and are lifted directly from the original
+        <a href="http://www.clarkware.com/software/JDepend.html" class="externalLink" title="External Link">JDepend documentation</a>.</p>
+      <table class="bodyTable">
+        <thead>
+          <tr class="a">
+            <th>Term</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="b">
+            <td>Number of Classes</td>
+            <td>The number of concrete and abstract classes (and interfaces) in the package is an indicator of the extensibility of the package.</td>
+          </tr>
+          <tr class="a">
+            <td>Afferent Couplings</td>
+            <td>The number of other packages that depend upon classes within the package is an indicator of the package's responsibility.</td>
+          </tr>
+          <tr class="b">
+            <td>Efferent Couplings</td>
+            <td>The number of other packages that the classes in the package depend upon is an indicator of the package's independence.</td>
+          </tr>
+          <tr class="a">
+            <td>Abstractness</td>
+            <td>The ratio of the number of abstract classes (and interfaces) in the analyzed package to the total number of classes in the analyzed package. The range for this metric is 0 to 1, with A=0 indicating a completely concrete package and A=1 indicating a completely abstract package.</td>
+          </tr>
+          <tr class="b">
+            <td>Instability</td>
+            <td>The ratio of efferent coupling (Ce) to total coupling (Ce / (Ce + Ca)). This metric is an indicator of the package's resilience to change. The range for this metric is 0 to 1, with I=0 indicating a completely stable package and I=1 indicating a completely instable package.</td>
+          </tr>
+          <tr class="a">
+            <td>Distance</td>
+            <td>The perpendicular distance of a package from the idealized line A + I = 1. This metric is an indicator of the package's balance between abstractness and stability. A package squarely on the main sequence is optimally balanced with respect to its abstractness and stability. Ideal packages are either completely abstract and stable (x=0, y=1) or completely concrete and instable (x=1, y=0). The range for this metric is 0 to 1, with D=0 indicating a package that is coincident with the main sequence and D=1 indicating a package that is as far from the main sequence as possible.</td>
+          </tr>
+          <tr class="b">
+            <td>Cycles</td>
+            <td>Packages participating in a package dependency cycle are in a deadly embrace with respect to reusability and their release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2003-2007, The Apache Software Foundation</div><div class="clear"><hr></hr></div></div></body></html>

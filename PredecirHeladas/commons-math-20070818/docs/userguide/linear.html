@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>The Commons Math User Guide - Linear Algebra - Math</title><style type="text/css" media="all">
+          @import url("../style/maven-base.css");
+          
+          @import url("../style/maven-theme.css");@import url("../style/project.css");</style><link rel="stylesheet" href="../style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta></head><body class="composite"><div id="banner"><a href="http://commons.apache.org/" id="organizationLogo"><img alt="The Apache Software Foundation" src="http://commons.apache.org/images/logo.png"></img></a><a href="http://commons.apache.org/math/" id="projectLogo"><img alt="Math" src="../images/math.gif"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">Last published: 18 August 2007
+                <span class="separator">|</span> Doc for  1.2-SNAPSHOT
+                </div><div class="xright">
+        
+        <a href="http://commons.apache.org/" class="externalLink" title="External Link">Apache Commons</a>
+      </div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuMath"><h5>Math</h5><ul><li class="none"><a href="../index.html">Overview</a></li><li class="none"><a href="../proposal.html">Proposal</a></li><li class="none"><a href="../developers.html">Developers Guide</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.0/index.html" class="externalLink" title="External Link">Javadoc (1.0 release)</a></li><li class="none"><a href="http://commons.apache.org/math/api-1.1/index.html" class="externalLink" title="External Link">Javadoc (1.1 release)</a></li><li class="none"><a href="../apidocs/index.html">Javadoc (1.2-SNAPSHOT)</a></li><li class="none"><a href="http://svn.apache.org/viewvc/commons/proper/math/trunk" class="externalLink" title="External Link">Source Repository (current)</a></li><li class="none"><a href="http://wiki.apache.org/commons/Math" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="menuUser_Guide"><h5>User Guide</h5><ul><li class="none"><a href="../userguide/index.html">Contents</a></li><li class="none"><a href="../userguide/overview.html">Overview</a></li><li class="none"><a href="../userguide/stat.html">Statistics</a></li><li class="none"><a href="../userguide/random.html">Data Generation</a></li><li class="none"><strong><a href="../userguide/linear.html">Linear Algebra</a></strong></li><li class="none"><a href="../userguide/analysis.html">Numerical Analysis</a></li><li class="none"><a href="../userguide/special.html">Special Functions</a></li><li class="none"><a href="../userguide/utilities.html">Utilities</a></li><li class="none"><a href="../userguide/complex.html">Complex Numbers</a></li><li class="none"><a href="../userguide/distribution.html">Distributions</a></li><li class="none"><a href="../userguide/fraction.html">Fractions</a></li><li class="none"><a href="../userguide/transform.html">Transform Methods</a></li><li class="none"><a href="../userguide/geometry.html">3D Geometry</a></li><li class="none"><a href="../userguide/estimation.html">Parametric Estimation</a></li><li class="none"><a href="../userguide/optimization.html">Optimization</a></li><li class="none"><a href="../userguide/ode.html">Ordinary Differential Equations</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="../index.html">About</a></li><li class="collapsed"><a href="../project-info.html">Project Info</a></li><li class="collapsed"><a href="../maven-reports.html">Project Reports</a></li><li class="none"><a href="http://commons.apache.org/charter.html" class="externalLink" title="External Link">Development Process</a></li></ul></div><div id="menuCommons"><h5>Commons</h5><ul><li class="none"><a href="http://jakarta.apache.org/commons/" class="externalLink" title="External Link">Home</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/components.html" class="externalLink" title="External Link">Components</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/sandbox/index.html" class="externalLink" title="External Link">Sandbox</a></li><li class="collapsed"><a href="http://jakarta.apache.org/commons/dormant/index.html" class="externalLink" title="External Link">Dormant</a></li><li class="none"><a href="http://jakarta.apache.org/commons/volunteering.html" class="externalLink" title="External Link">Volunteering</a></li><li class="none"><a href="http://jakarta.apache.org/commons/patches.html" class="externalLink" title="External Link">Contributing Patches</a></li><li class="none"><a href="http://jakarta.apache.org/commons/building.html" class="externalLink" title="External Link">Building Components</a></li><li class="none"><a href="http://jakarta.apache.org/commons/releases/index.html" class="externalLink" title="External Link">Releasing Components</a></li><li class="none"><a href="http://wiki.apache.org/jakarta-commons/FrontPage" class="externalLink" title="External Link">Wiki</a></li></ul></div><div id="legend"><h5>Legend</h5><ul><li class="externalLink">External Link</li><li class="newWindow">Opens in a new window</li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="../images/logos/maven-feather.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="3_Linear_Algebra"></a><h2>3 Linear Algebra</h2>
+      <div class="subsection"><a name="3_1_Overview"></a><h3>3.1 Overview</h3>
+        <p>
+           Currently, numerical linear algebra support in commons-math is 
+           limited to basic operations on real matrices and solving linear systems.
+        </p>
+      </div>
+      <div class="subsection"><a name="3_2_Real_matrices"></a><h3>3.2 Real matrices</h3>
+        <p>
+          The <a href="../apidocs/org/apache/commons/math/linear/RealMatrix.html">
+          RealMatrix</a> interface represents a matrix with real numbers as 
+          entries.  The following basic matrix operations are supported:
+          <ul>
+          <li>Matrix addition, subtraction, mutiplication</li>
+          <li>Scalar addition and multiplication</li>
+          <li>Inverse and transpose</li>
+          <li>Determinants and singularity testing</li>
+          <li>LU decomposition</li>
+          <li>Norm and Trace</li>
+          <li>Operation on a vector</li>
+          </ul>   
+        </p>
+        <p>
+         Example:
+         
+    <div class="source"><pre>
+// Create a real matrix with two rows and three columns
+double[][] matrixData = { {1d,2d,3d}, {2d,5d,3d}};
+RealMatrix m = new RealMatrixImpl(matrixData);
+
+// One more with three rows, two columns
+double[][] matrixData2 = { {1d,2d}, {2d,5d}, {1d, 7d}};
+RealMatrix n = new RealMatrixImpl(matrixData2);
+
+// Note: The constructor copies  the input double[][] array.
+
+// Now multiply m by n
+RealMatrix p = m.multiply(n);
+System.out.println(p.getRowDimension()); // 2
+System.out.println(p.getRowDimension()); // 2
+
+// Invert p
+RealMatrix pInverse = p.inverse();
+         </pre></div>
+  
+        </p>         
+      </div>
+      <div class="subsection"><a name="3_3_Solving_linear_systems"></a><h3>3.3 Solving linear systems</h3>
+        <p>
+          The <code>solve()</code> methods of the <code>RealMatrix</code> interface
+          support solving linear systems of equations.  In each case, the 
+          <code>RealMatrix</code> represents the coefficient matrix of the system.
+          For example, to solve the linear system
+          <pre>
+           2x + 3y - 2z = 1
+           -x + 7y + 6x = -2
+           4x - 3y - 5z = 1
+          </pre>
+          Start by creating a RealMatrix to store the coefficients
+          
+    <div class="source"><pre>
+double[][] coefficientsData = {{2, 3, -2}, {-1, 7, 6}, {4, -3, -5}};
+RealMatrix coefficients = new RealMatrixImpl(coefficientsData);
+          </pre></div>
+  
+          Next create a <code>double[]</code> array to represent the constant
+          vector and use <code>solve(double[])</code> to solve the system
+          
+    <div class="source"><pre>
+double[] constants = {1, -2, 1};
+double[] solution = coefficients.solve(constants);
+          </pre></div>
+  
+          The <code>solution</code> array will contain values for x 
+          (<code>solution[0]</code>), y (<code>solution[1]</code>), 
+          and z (<code>solution[2]</code>) that solve the system.
+        </p>
+        <p>
+          If the coefficient matrix is not square or singular, an 
+          <a href="../apidocs/org/apache/commons/math/linear/InvalidMatrixException.html">
+          InvalidMatrixException</a> is thrown.
+        </p>
+        <p>
+          It is possible to solve multiple systems with the same coefficient matrix 
+          in one method call.  To do this, create a matrix whose column vectors correspond 
+          to the constant vectors for the systems to be solved and use 
+          <code>solve(RealMatrix),</code> which returns a matrix with column
+          vectors representing the solutions.
+        </p>
+      </div>
+    </div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2003-2007, The Apache Software Foundation</div><div class="clear"><hr></hr></div></div></body></html>

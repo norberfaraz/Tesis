@@ -1,0 +1,53 @@
+
+Jakarta Commons Math Version 1.2-SNAPSHOT 
+         RELEASE NOTES
+
+      
+
+For more information on Jakarta Commons Math, see
+http://commons.apache.org/math/
+      
+Changes in this version include:
+
+  New Features:
+
+o Added the estimation optimization, geometry and ode package from the 
+  Mantissa library. 
+
+  Fixed bugs:
+
+o Fixed numerous warnings in test code. 
+o Use the initial guess provided by the user in BrentSolver.solve(), thus 
+  improving speed. Issue: MATH-156. Thanks to Tyler Ward. 
+o Made ComplexFormat format double values with a provided NumberFormat 
+  instance instead of using the real part format for all values. Issue: 
+  MATH-18. Thanks to Phil Steitz. 
+o Modified ProperFractionFormat to reject embedded minus signs. Issue: 
+  MATH-60. Thanks to Nhung Nnguyen. 
+o Added a nextAfter method in MathUtils to return the next 
+  machine-representable number in a specified direction from a given floating 
+  point number. Used this to ensure that MathUtils.round does not return 
+  incorrect results for numbers with bad IEEE754 representations. Issue: 
+  MATH-151. Thanks to Luc Maisonobe. 
+o Modified getSumSquaredErrors method in SimpleRegression to always return a 
+  non-negative result. Issue: MATH-85. Thanks to Mark Osborn, Luc Maisonobe. 
+o Corrected nextInt and nextLong to handle wide value ranges. Issue: 
+  MATH-153. Thanks to Remi Arntzen. 
+o Increased default precision of Gamma and Beta functions. Issue: MATH-166. 
+  Thanks to Lukas Theussl. 
+o Modified NormalDistributionImpl.cumulativeProbablity to catch 
+  MaxIterationsExceededException and return 0 or 1, resp. if the argument is 
+  more than 20 standard deviations from the mean. Issue: MATH-167. 
+
+  Changes:
+
+o Added Pascal distribution implementation. Issue: MATH-120. Thanks to Todd 
+  C. Parnell. 
+o Added QR Decomposition. Issue: MATH-148. Thanks to Joni Salonen. 
+o Added Fast Fourier Transform implementation. Issue: MATH-140. Thanks to 
+  Xiaogang Zhang. 
+o Added log function to MathUtils. Issue: MATH-158. Thanks to Hasan Diwan. 
+o Added two sample (binned comparison) ChiSquare test. Issue: MATH-160. 
+  Thanks to Matthias Hummel.  
+
+      
