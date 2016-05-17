@@ -34,7 +34,7 @@ public class Main {
 		
 	//	prueba.RealizarPrueba(6,datos);
 		
-		prueba.PruebaUnica("2015-7-04",6,-1,-2,datos);
+		prueba.PruebaUnica("2015-7-08",6,-1,-2,datos);
 	
 	// prueba=new Prueba();
 		
